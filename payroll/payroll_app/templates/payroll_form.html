@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payroll Calculator</title>
+</head>
+<body>
+    <h1>Payroll Calculator</h1>
+    <form method="POST" action="{% url 'calculate_payroll' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="rate_of_pay">Rate of Pay:</label><br>
+        <input type="number" id="rate_of_pay" name="rate_of_pay" step="0.01" required><br>
+        <label for="hours_worked">Hours Worked:</label><br>
+        <input type="number" id="hours_worked" name="hours_worked" step="0.01" required><br>
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
